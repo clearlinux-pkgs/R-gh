@@ -4,16 +4,14 @@
 #
 Name     : R-gh
 Version  : 1.0.1
-Release  : 5
+Release  : 6
 URL      : https://cran.r-project.org/src/contrib/gh_1.0.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/gh_1.0.1.tar.gz
 Summary  : 'GitHub' 'API'
 Group    : Development/Tools
 License  : MIT
-Requires: R-httr
-Requires: R-ini
-Requires: R-jsonlite
-Requires: R-rlang
+Requires: R-cli
+BuildRequires : R-cli
 BuildRequires : R-httr
 BuildRequires : R-ini
 BuildRequires : R-jsonlite
@@ -37,10 +35,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1540746290
+export SOURCE_DATE_EPOCH=1552840694
 
 %install
-export SOURCE_DATE_EPOCH=1540746290
+export SOURCE_DATE_EPOCH=1552840694
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -76,8 +74,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library gh|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  gh || :
 
 
 %files
@@ -104,3 +101,12 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/gh/help/paths.rds
 /usr/lib64/R/library/gh/html/00Index.html
 /usr/lib64/R/library/gh/html/R.css
+/usr/lib64/R/library/gh/tests/testthat.R
+/usr/lib64/R/library/gh/tests/testthat/helper-offline.R
+/usr/lib64/R/library/gh/tests/testthat/helper.R
+/usr/lib64/R/library/gh/tests/testthat/test-build_request.R
+/usr/lib64/R/library/gh/tests/testthat/test-github_remote.R
+/usr/lib64/R/library/gh/tests/testthat/test-mock-error.R
+/usr/lib64/R/library/gh/tests/testthat/test-mock-repos.R
+/usr/lib64/R/library/gh/tests/testthat/test-mock-whoami.R
+/usr/lib64/R/library/gh/tests/testthat/test-utils.R
