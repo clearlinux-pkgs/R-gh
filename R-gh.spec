@@ -4,7 +4,7 @@
 #
 Name     : R-gh
 Version  : 1.0.1
-Release  : 13
+Release  : 14
 URL      : https://cran.r-project.org/src/contrib/gh_1.0.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/gh_1.0.1.tar.gz
 Summary  : 'GitHub' 'API'
@@ -17,6 +17,7 @@ BuildRequires : R-httr
 BuildRequires : R-ini
 BuildRequires : R-jsonlite
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 # gh
@@ -35,10 +36,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1569358713
+export SOURCE_DATE_EPOCH=1571838221
 
 %install
-export SOURCE_DATE_EPOCH=1569358713
+export SOURCE_DATE_EPOCH=1571838221
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
