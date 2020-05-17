@@ -4,7 +4,7 @@
 #
 Name     : R-gh
 Version  : 1.1.0
-Release  : 18
+Release  : 19
 URL      : https://cran.r-project.org/src/contrib/gh_1.1.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/gh_1.1.0.tar.gz
 Summary  : 'GitHub' 'API'
@@ -31,21 +31,22 @@ BuildRequires : buildreq-R
 
 %prep
 %setup -q -c -n gh
+cd %{_builddir}/gh
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1580152252
+export SOURCE_DATE_EPOCH=1589759257
 
 %install
-export SOURCE_DATE_EPOCH=1580152252
+export SOURCE_DATE_EPOCH=1589759257
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
