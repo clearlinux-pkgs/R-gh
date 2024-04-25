@@ -7,7 +7,7 @@
 #
 Name     : R-gh
 Version  : 1.4.1
-Release  : 48
+Release  : 49
 URL      : https://cran.r-project.org/src/contrib/gh_1.4.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/gh_1.4.1.tar.gz
 Summary  : 'GitHub' 'API'
